@@ -5,7 +5,7 @@ access_grant: can_view_commit_data {
 
 view: spend {
   required_access_grants: [can_view_commit_data]
-  sql_table_name: `cmegroup-billing-export.commitment_spend.spend`
+  sql_table_name: `INSERT_TABLE_NAME`
     ;;
 
   dimension: commit_size {

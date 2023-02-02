@@ -70,4 +70,3 @@
   series_types: {}
   show_null_points: true
   interpolation: linear
-  hidden_series: [cmegroup-billing-export - cmegroup-billing-export - total_usage_amount]

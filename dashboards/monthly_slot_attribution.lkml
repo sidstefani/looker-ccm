@@ -52,7 +52,6 @@
   y_axes: []
   x_axis_zoom: true
   y_axis_zoom: true
-  hidden_series: [cmegroup-billing-export - cmegroup-billing-export - total_usage_amount]
   series_types: {}
   show_row_numbers: true
   transpose: false

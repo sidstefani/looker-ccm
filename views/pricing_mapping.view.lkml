@@ -26,7 +26,6 @@ view: pricing_mapping {
     type: string
     label: "Is Marketplace Purchase? (Yes/No)"
     sql: CASE
-    WHEN ${service__id} =   '6F81-5844-456A' THEN 'No'
     WHEN ${category} = "Marketplace Services" THEN 'Yes'
     ELSE 'No'
     END;;

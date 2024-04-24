@@ -1,9 +1,8 @@
 connection: "gcp_billing"
 label: "Google Cloud Billing"
 persist_with: daily_datagroup
-include: "/datagroups.lkml"
+include: "/datagroups/datagroup.lkml"
 include: "/views/*.view.lkml"
-include: "/views/migration_model/*.view.lkml"
 
 explore: gcp_billing_export {
   label: "Billing"

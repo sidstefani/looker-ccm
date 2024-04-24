@@ -1,10 +1,10 @@
-access_grant: can_view_commit_data {
-  user_attribute: commit_data
-  allowed_values: ["yes"]
-}
+#access_grant: can_view_commit_data {
+#  user_attribute: commit_data
+#  allowed_values: ["yes"]
+#}
 
 view: spend {
-  required_access_grants: [can_view_commit_data]
+  #required_access_grants: [can_view_commit_data]
   sql_table_name: `INSERT_TABLE_NAME`
     ;;
 

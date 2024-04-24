@@ -1,3 +1,3 @@
 # looker-ccm
 
-Additional metrics and transformation on the Looker Cloud Cost Management Block 
+Fork this repo to install on your customer's instance instead of downloading the read-only marketplace block. 

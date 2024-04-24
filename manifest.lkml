@@ -19,8 +19,3 @@ constant: PRICING_TABLE {
   export: override_optional
 }
 
- 
-constant: CONNECTION {
-  #value: "bq-connection"
-  export: override_optional
-}

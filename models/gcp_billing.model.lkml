@@ -31,27 +31,12 @@ explore: gcp_billing_export {
     relationship: one_to_one
     sql_on: ${pricing.sku__id} = ${gcp_billing_export.sku__id} ;;
   }
-
-  join: eligible_labels {
-    type:  left_outer
-    view_label: "Billing"
-    fields: [eligible_labels.labeling_supported]
-    relationship:  one_to_one
-    sql_on:  ${gcp_billing_export.service__id} = ${eligible_labels.service_id} ;;
-  }
-
   join: pricing_mapping {
     type: left_outer
     view_label: "Pricing Taxonomy"
     relationship: one_to_one
     fields: [pricing_mapping.marketplace_purchase]
     sql_on: ${pricing_mapping.sku__id} = ${gcp_billing_export.sku__id} ;;
-  }
-
-  join: spend {
-    type: full_outer
-    relationship: one_to_one
-    sql_on: ${spend.month_month} = ${gcp_billing_export.invoice_month_month} ;;
   }
 }
 

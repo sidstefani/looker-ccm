@@ -1,4 +1,4 @@
-#Remove the specific values from the marketplace block and add in specific access and data connectors from the client
+#Remove the specific values and add in specific access and data connectors from the client
 
 ################ Constants ################
 

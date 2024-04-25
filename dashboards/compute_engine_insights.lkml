@@ -1,9 +1,8 @@
 - dashboard: compute_engine_insights
-  title: Compute Engine Insights
+  title: Compute Engine Insights 
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: NQHREuHodMG8X1INn5oZpB
   elements:
   - name: 'Cores: Usage and Cost Insights'
     type: text
@@ -98,7 +97,7 @@
     height: 3
   - title: Cores Usage Amount by Type
     name: Cores Usage Amount by Type
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
@@ -155,8 +154,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 7
     col: 0
@@ -164,7 +161,7 @@
     height: 7
   - title: Cores Cost by Usage Type
     name: Cores Cost by Usage Type
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [gcp_billing_export.usage_start_month, pricing.pricing_usage_type, gcp_billing_export.total_cost]
@@ -234,7 +231,7 @@
     height: 7
   - title: Core Instance Generation
     name: Core Instance Generation
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [pricing.pricing_type, pricing.pricing_sub_type, pricing.pricing_usage_type,
@@ -293,8 +290,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 17
     col: 0
@@ -302,7 +297,7 @@
     height: 7
   - title: Cores Cost by Usage Type (Copy)
     name: Cores Cost by Usage Type (Copy)
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [gcp_billing_export.usage_start_month, pricing.pricing_usage_type, gcp_billing_export.total_cost]
@@ -363,8 +358,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 27
     col: 12
@@ -372,7 +365,7 @@
     height: 7
   - title: Cores Usage Amount by Type (Copy)
     name: Cores Usage Amount by Type (Copy)
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.usage__amount_in_calculated_units, gcp_billing_export.usage_start_month,
@@ -429,8 +422,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 27
     col: 0
@@ -438,7 +429,7 @@
     height: 7
   - title: Core Instance Generation (Copy)
     name: Core Instance Generation (Copy)
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [pricing.pricing_type, pricing.pricing_sub_type, pricing.pricing_usage_type,
@@ -497,8 +488,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 37
     col: 0
@@ -506,7 +495,7 @@
     height: 7
   - title: Persisten Disk Usage Last 7 Days
     name: Persisten Disk Usage Last 7 Days
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.usage_start_date, pricing.pricing_type, gcp_billing_export.usage__calculated_unit,
@@ -565,8 +554,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 47
     col: 0
@@ -574,7 +561,7 @@
     height: 8
   - title: Persistent Disk Usage
     name: Persistent Disk Usage
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
@@ -637,8 +624,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 47
     col: 12
@@ -646,7 +631,7 @@
     height: 8
   - title: Network Costs
     name: Network Costs
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost]
@@ -710,8 +695,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 59
     col: 12
@@ -719,7 +702,7 @@
     height: 8
   - title: Network Calculated Units
     name: Network Calculated Units
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.usage__amount_in_calculated_units]
@@ -785,8 +768,6 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 59
     col: 0
@@ -826,7 +807,7 @@
     height: 2
   - title: ''
     name: " (2)"
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.usage_start_month, gcp_billing_export.total_cost,
@@ -902,15 +883,13 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
     row: 69
     col: 0
     width: 24
     height: 7
   - title: ''
     name: " (3)"
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.usage_start_week, gcp_billing_export.service__description,
@@ -989,15 +968,13 @@
     title_hidden: true
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
     row: 78
     col: 0
     width: 24
     height: 7
   - title: Regional Usage
     name: Regional Usage
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [pricing.pricing_type, gcp_billing_export.usage_start_month, gcp_billing_export.total_cost,
@@ -1058,19 +1035,10 @@
     y_axes: []
     listen:
       GCP Project ID: gcp_billing_export.project__id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
     row: 85
     col: 0
     width: 24
     height: 7
-  - type: button
-    name: button_686
-    rich_content_json: '{"text":"User Guide","description":"User Guide","newTab":true,"alignment":"right","size":"small","style":"FILLED","color":"#5A6874","href":"https://docs.google.com/document/d/1LqB3XHoCSCkIqIm4qyMLmCMetl3bSzTHZZTJC3Nuv1Y/edit?usp=share_link"}'
-    row: 0
-    col: 0
-    width: 24
-    height: 1
   filters:
   - name: GCP Project ID
     title: GCP Project ID
@@ -1081,36 +1049,10 @@
     ui_config:
       type: tag_list
       display: popover
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.project__id
-  - name: App ID (Resource)
-    title: App ID (Resource)
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: popover
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: gcp_billing_export.app_id_with_unallocated
-  - name: Application Name
-    title: Application Name
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: popover
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: applications.name
   - name: Usage Start Date
     title: Usage Start Date
     type: field_filter
@@ -1121,7 +1063,7 @@
       type: advanced
       display: popover
       options: []
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.usage_start_date

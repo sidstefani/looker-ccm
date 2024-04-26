@@ -2,11 +2,9 @@
   title: Cost Optimization Recommendations
   layout: newspaper
   preferred_viewer: dashboards-next
-  preferred_slug: BvG4OlGOpvq52VPY06lg4u
   elements:
   - title: Total Savings
     name: Total Savings
-    model: gcp_billing
     explore: recommendations_export
     type: single_value
     fields: [recommendations_export.total_savings]
@@ -60,7 +58,6 @@
     height: 3
   - title: Total Savings
     name: Total Savings (2)
-    model: gcp_billing
     explore: recommendations_export
     type: single_value
     fields: [recommendations_export.total_savings]
@@ -90,7 +87,6 @@
     height: 3
   - title: VM Recommendations
     name: VM Recommendations (2)
-    model: gcp_billing
     explore: recommendations_export
     type: looker_grid
     fields: [recommendations_export.last_refresh_date, recommendations_export.project_name,
@@ -166,7 +162,6 @@
     height: 2
   - title: VM Recommendations
     name: VM Recommendations (3)
-    model: gcp_billing
     explore: recommendations_export
     type: looker_column
     fields: [recommendations_export.project_name, recommendations_export.recommender_subtype,
@@ -234,7 +229,6 @@
     height: 8
   - title: PD Recommendations
     name: PD Recommendations
-    model: gcp_billing
     explore: recommendations_export
     type: looker_grid
     fields: [recommendations_export.last_refresh_date, recommendations_export.project_name,
@@ -302,7 +296,6 @@
     height: 8
   - title: PD Recommendations
     name: PD Recommendations (2)
-    model: gcp_billing
     explore: recommendations_export
     type: looker_column
     fields: [recommendations_export.project_name, recommendations_export.recommender_subtype,
@@ -400,7 +393,6 @@
       type: tag_list
       display: popover
       options: []
-    model: gcp_billing
     explore: recommendations_export
     listens_to_filters: []
     field: recommendations_export.cloud_entity_id

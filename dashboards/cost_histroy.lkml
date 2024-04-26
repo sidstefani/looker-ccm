@@ -68,7 +68,6 @@
     y_axes: []
     listen:
       Service Type: gcp_billing_export.service__description
-      Is Labeling Supported? (Yes / No): eligible_labels.labeling_supported
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
       Category: gcp_billing_export.category
     row: 1
@@ -145,7 +144,6 @@
     y_axes: []
     listen:
       Service Type: gcp_billing_export.service__description
-      Is Labeling Supported? (Yes / No): eligible_labels.labeling_supported
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
       Category: gcp_billing_export.category
     row: 1
@@ -328,7 +326,6 @@
     title_hidden: true
     listen:
       Service Type: gcp_billing_export.service__description
-      Is Labeling Supported? (Yes / No): eligible_labels.labeling_supported
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
       Category: gcp_billing_export.category
       Date Selection: gcp_billing_export.date_selection

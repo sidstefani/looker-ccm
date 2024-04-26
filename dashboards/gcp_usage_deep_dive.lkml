@@ -1,13 +1,12 @@
 - dashboard: gcp_usage_deep_dive
-  title: GCP Usage Deep Dive
+  title: GCP Usage Deep Dive V1
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: xpbuWOTpKavFr2WsBUscLp
   elements:
   - title: YTD Costs
     name: YTD Costs
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.usage_start_year, gcp_billing_export.total_net_cost]
@@ -80,7 +79,7 @@
     height: 3
   - title: QTD Costs
     name: QTD Costs
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.total_net_cost, gcp_billing_export.usage_start_quarter]
@@ -154,7 +153,7 @@
     height: 3
   - title: MTD Costs
     name: MTD Costs
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.total_net_cost, gcp_billing_export.usage_start_month]
@@ -227,7 +226,7 @@
     height: 3
   - title: YTD Cost Trends
     name: YTD Cost Trends
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.total_cost, gcp_billing_export.usage_start_month_name,
@@ -313,7 +312,7 @@
     height: 8
   - title: YTD Cost by Service
     name: YTD Cost by Service
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_pie
     fields: [gcp_billing_export.total_cost, gcp_billing_export.service__description]
@@ -402,7 +401,7 @@
     height: 2
   - title: Credit Breakdown
     name: Credit Breakdown
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_area
     fields: [gcp_billing_export.usage_start_month, gcp_billing_export__credits.total_amount]
@@ -478,16 +477,9 @@
     col: 0
     width: 24
     height: 6
-  - type: button
-    name: button_687
-    rich_content_json: '{"text":"User Guide","description":"User Guide","newTab":true,"alignment":"right","size":"small","style":"FILLED","color":"#5A6874","href":"https://docs.google.com/document/d/1LqB3XHoCSCkIqIm4qyMLmCMetl3bSzTHZZTJC3Nuv1Y/edit?usp=share_link"}'
-    row: 0
-    col: 0
-    width: 24
-    height: 1
   - title: Monthly Cost by Service
     name: Monthly Cost by Service
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.total_cost, gcp_billing_export.service__description,
@@ -630,7 +622,7 @@
       type: tag_list
       display: popover
       options: []
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.project__id
@@ -644,7 +636,7 @@
       type: tag_list
       display: popover
       options: []
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.service__description
@@ -657,7 +649,8 @@
     ui_config:
       type: button_group
       display: inline
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: pricing_mapping.marketplace_purchase
+

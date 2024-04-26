@@ -1,13 +1,12 @@
 - dashboard: gcp_summary
-  title: GCP Summary
+  title: GCP Summary V1
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 6dbjXp0ah43jfdioKunIn8
   elements:
   - title: YTD Costs
     name: YTD Costs
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.usage_start_year, gcp_billing_export.total_net_cost]
@@ -71,8 +70,6 @@
     y_axes: []
     hidden_pivots: {}
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 1
@@ -81,7 +78,7 @@
     height: 2
   - title: WTD Costs
     name: WTD Costs
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.usage_start_week, gcp_billing_export.total_net_cost]
@@ -145,8 +142,6 @@
     y_axes: []
     hidden_pivots: {}
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 7
@@ -155,7 +150,7 @@
     height: 2
   - title: MTD Costs
     name: MTD Costs
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.usage_start_month, gcp_billing_export.total_net_cost]
@@ -219,8 +214,6 @@
     y_axes: []
     hidden_pivots: {}
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 5
@@ -229,7 +222,7 @@
     height: 2
   - title: QTD Costs
     name: QTD Costs
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export.usage_start_quarter, gcp_billing_export.total_net_cost]
@@ -293,8 +286,6 @@
     y_axes: []
     hidden_pivots: {}
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 3
@@ -319,7 +310,7 @@
     height: 2
   - title: CREDIT USAGE BY PROJECT
     name: CREDIT USAGE BY PROJECT
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_bar
     fields: [gcp_billing_export__credits.total_amount, gcp_billing_export.project__name]
@@ -374,8 +365,6 @@
     interpolation: linear
     hidden_fields: []
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 14
@@ -384,7 +373,7 @@
     height: 9
   - title: TOP BILLED PROJECTS
     name: TOP BILLED PROJECTS
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_waterfall
     fields: [gcp_billing_export.project__name, gcp_billing_export.total_cost]
@@ -435,8 +424,6 @@
     hidden_fields: [gcp_billing_export.total_cost]
     y_axes: []
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 25
@@ -453,7 +440,7 @@
     height: 2
   - title: YEAR OVER YEAR SPEND
     name: YEAR OVER YEAR SPEND
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.total_cost, gcp_billing_export.usage_start_month_name,
@@ -504,24 +491,15 @@
     defaults_version: 1
     hidden_fields: []
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 1
     col: 4
     width: 20
     height: 8
-  - type: button
-    name: button_674
-    rich_content_json: '{"text":"User Guide","description":"User Guide","newTab":true,"alignment":"right","size":"small","style":"FILLED","color":"#1A73E8","href":"https://docs.google.com/document/d/1LqB3XHoCSCkIqIm4qyMLmCMetl3bSzTHZZTJC3Nuv1Y/edit?usp=share_link"}'
-    row: 0
-    col: 22
-    width: 2
-    height: 1
   - title: REGION
     name: REGION
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.total_cost, gcp_billing_export__credits.total_amount,
@@ -548,8 +526,6 @@
     series_types: {}
     defaults_version: 1
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 39
@@ -558,7 +534,7 @@
     height: 6
   - title: SKU
     name: SKU
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.sku__description, gcp_billing_export.total_cost, gcp_billing_export__credits.total_amount]
@@ -582,8 +558,6 @@
     series_types: {}
     defaults_version: 1
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 33
@@ -592,7 +566,7 @@
     height: 6
   - title: SERVICE AMOUNT
     name: SERVICE AMOUNT
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.total_cost, gcp_billing_export__credits.total_amount,
@@ -617,8 +591,6 @@
     series_types: {}
     defaults_version: 1
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 33
@@ -627,7 +599,7 @@
     height: 6
   - title: Credit Amount
     name: Credit Amount
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: single_value
     fields: [gcp_billing_export__credits.total_amount, gcp_billing_export.total_cost]
@@ -692,8 +664,6 @@
     interpolation: linear
     hidden_fields: [gcp_billing_export.total_cost]
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 11
@@ -702,7 +672,7 @@
     height: 3
   - title: COST VS CREDIT ANALYSIS
     name: COST VS CREDIT ANALYSIS
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [gcp_billing_export.usage_start_week, gcp_billing_export__credits.total_amount,
@@ -764,8 +734,6 @@
     hidden_fields: []
     hidden_pivots: {}
     listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 11
@@ -774,7 +742,7 @@
     height: 7
   - title: PERCENT OF SPEND
     name: PERCENT OF SPEND
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [gcp_billing_export.usage_start_week, gcp_billing_export__credits.total_amount,
@@ -844,9 +812,7 @@
     defaults_version: 1
     hidden_fields: [4_week_moving_average]
     hidden_pivots: {}
-    listen:
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
+    listen: 
       Service Type: gcp_billing_export.service__description
       Is Marketplace Purchase? (Yes / No): pricing_mapping.marketplace_purchase
     row: 18
@@ -854,32 +820,6 @@
     width: 17
     height: 5
   filters:
-  - name: App ID (Resource)
-    title: App ID (Resource)
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: popover
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: gcp_billing_export.app_id_with_unallocated
-  - name: Application Name
-    title: Application Name
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: popover
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: applications.name
   - name: Service Type
     title: Service Type
     type: field_filter
@@ -889,7 +829,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.service__description
@@ -902,7 +842,7 @@
     ui_config:
       type: button_group
       display: inline
-    model: gcp_billing
+    ##model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: pricing_mapping.marketplace_purchase

@@ -1,9 +1,8 @@
 - dashboard: gke_insights_
-  title: 'GKE Insights '
+  title: 'GKE Insights V1'
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: KHmFzpavOUUDgKbeydQnVu
   elements:
   - name: Trending GKE Groups
     type: text
@@ -45,7 +44,7 @@
     height: 1
   - title: MoM GKE SKU Costs
     name: MoM GKE SKU Costs
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.usage_start_month, gcp_billing_export.total_cost,
@@ -118,16 +117,13 @@
     y_axes: []
     listen:
       Project ID: gcp_billing_export.project__id
-      Component ID: gcp_billing_export.component_id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
     row: 17
     col: 0
     width: 24
     height: 6
   - title: 'WoW GKE SKU Costs '
     name: 'WoW GKE SKU Costs '
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gcp_billing_export.usage_start_week, gcp_billing_export.total_cost, gcp_billing_export.sku__description]
@@ -192,16 +188,13 @@
     note_text: 'Disclaimer: The dates below are for the start of the week.'
     listen:
       Project ID: gcp_billing_export.project__id
-      Component ID: gcp_billing_export.component_id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
     row: 23
     col: 0
     width: 24
     height: 6
   - title: Trending GKE Groups Usage
     name: Trending GKE Groups Usage
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_column
     fields: [gke_grouping, gcp_billing_export.usage_start_week, gcp_billing_export.usage__amount_in_calculated_units]
@@ -283,9 +276,6 @@
     hidden_fields: []
     listen:
       Project ID: gcp_billing_export.project__id
-      Component ID: gcp_billing_export.component_id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 5
     col: 12
@@ -293,7 +283,7 @@
     height: 6
   - title: 'GKE Groups Project Costs '
     name: 'GKE Groups Project Costs '
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_grid
     fields: [gke_grouping, gcp_billing_export.project__id, gcp_billing_export.app_id_with_unallocated,
@@ -379,9 +369,6 @@
     y_axes: []
     listen:
       Project ID: gcp_billing_export.project__id
-      Component ID: gcp_billing_export.component_id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 11
     col: 0
@@ -389,7 +376,7 @@
     height: 5
   - title: 'Trending GKE Groups Cost '
     name: 'Trending GKE Groups Cost '
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     type: looker_line
     fields: [gcp_billing_export.total_cost, gke_grouping, gcp_billing_export.usage_start_week,
@@ -473,21 +460,11 @@
     hidden_fields: []
     listen:
       Project ID: gcp_billing_export.project__id
-      Component ID: gcp_billing_export.component_id
-      App ID (Resource): gcp_billing_export.app_id_with_unallocated
-      Application Name: applications.name
       Usage Start Date: gcp_billing_export.usage_start_date
     row: 5
     col: 0
     width: 12
     height: 6
-  - type: button
-    name: button_690
-    rich_content_json: '{"text":"User Guide","description":"User Guide","newTab":true,"alignment":"right","size":"small","style":"FILLED","color":"#5A6874","href":"https://docs.google.com/document/d/1LqB3XHoCSCkIqIm4qyMLmCMetl3bSzTHZZTJC3Nuv1Y/edit?usp=share_link"}'
-    row: 0
-    col: 0
-    width: 24
-    height: 1
   filters:
   - name: Project ID
     title: Project ID
@@ -498,49 +475,10 @@
     ui_config:
       type: dropdown_menu
       display: inline
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.project__id
-  - name: Component ID
-    title: Component ID
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: dropdown_menu
-      display: inline
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: gcp_billing_export.component_id
-  - name: App ID (Resource)
-    title: App ID (Resource)
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: dropdown_menu
-      display: inline
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: gcp_billing_export.app_id_with_unallocated
-  - name: Application Name
-    title: Application Name
-    type: field_filter
-    default_value: ''
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: tag_list
-      display: popover
-    model: gcp_billing
-    explore: gcp_billing_export
-    listens_to_filters: []
-    field: applications.name
   - name: Usage Start Date
     title: Usage Start Date
     type: field_filter
@@ -551,7 +489,7 @@
       type: advanced
       display: popover
       options: []
-    model: gcp_billing
+    #model: gcp_billing
     explore: gcp_billing_export
     listens_to_filters: []
     field: gcp_billing_export.usage_start_date

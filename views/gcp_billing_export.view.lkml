@@ -1,15 +1,21 @@
 view: gcp_billing_export {
   view_label: "Billing"
   derived_table: {
-    partition_keys: ["usage_start_time"]
-    # cluster_keys: ["project.id"]
+    partition_keys: ["partition_date"]
+    cluster_keys: ["usage_start_time", "service_description", "sku_description", "project_name", "invoice_date"]
     datagroup_trigger: daily_datagroup
-    #Sidney Stefani: Commented out in order to switch from Incremental PDT to PDT
-    #increment_key: "export_date"
-    #increment_offset: 0
-    sql: select *, generate_uuid() as pk, _PARTITIONTIME as partitiondate from @{BILLING_TABLE} ;;
-        #Sidney Stefani: Commented out in order to switch from Incremental PDT to PDT
-        #WHERE {% incrementcondition %} export_time {% endincrementcondition %
+    increment_key: "partition_date"
+    increment_offset: 1
+    sql: select *, 
+    generate_uuid() as pk, 
+    _PARTITIONTIME as partition_date, 
+    service.description as service_description, 
+    sku.description as sku_description, 
+    project.name as project_name,  
+    date(CAST(substring(invoice.month,1,4) AS int),CAST(substring(invoice.month,5,2) AS int),01) as invoice_date,
+    DATE(usage_start_time) as usage_start_date
+    from `@{BILLING_TABLE}` as billing_export 
+    WHERE {% incrementcondition %} _PARTITIONDATE {% endincrementcondition %};;
   }
 
   dimension: pk {

@@ -45,6 +45,7 @@ view: gcp_billing_export {
     description: "Partition column for the table - filter here to leverage partitions"
     group_label: "Partition Fields"
     type: time
+    hidden: yes
     timeframes: [
       raw,
       date,
@@ -56,6 +57,23 @@ view: gcp_billing_export {
     convert_tz: no
     datatype: date
     sql: ${TABLE}._PARTITIONTIME ;;
+  }
+
+  dimension_group: partition {
+    group_label: "Partition Fields"
+    type: time
+    hidden: yes
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: datetime
+    sql: ${TABLE}.partition_date ;;
   }
 
   dimension: adjustment_info__description {
